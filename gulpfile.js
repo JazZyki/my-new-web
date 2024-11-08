@@ -20,13 +20,13 @@ const paths = {
 	imagesDest: 'dist/images'
 }
 
-const source = require('./gulpsource.json')
+//const source = require('./gulpsource.json')
 
-const user = 'user.name';
-const password = 'password';
-const host = 'host.server';
+const user = 'mynew.jazzyki.cz';
+const password = '1*mynew2024';
+const host = 'mynew.jazzyki.cz';
 const port = 21; // FTP port (default is 21)
-const remoteFolder = 'someName'; // Remote path where you want to upload files
+const remoteFolder = '/'; // Remote path where you want to upload files
 
 function gulpScss() {
 	return src(files.scssPath, { sourcemaps: true })
@@ -59,9 +59,10 @@ function ftpUpload() {
 		log: gutil.log // Optional: For logging
 	});
 
-	return src('dist/**/*') // Adjust the source folder as needed
+	return src(['dist/**/*', 'index.html']) // Adjust the source folder as needed
 		.pipe(conn.newer(remoteFolder)) // Only upload newer files
 		.pipe(conn.dest(remoteFolder));
+	return src('..')
 }
 
 // Export the FTP upload task

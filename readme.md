@@ -8,3 +8,4 @@ It compiles SCSS, minifies JS files and uploads them, with images folder to FTPs
  - 2 in project folder run `npm install` to install all packages needed to compile files
  - 3 Need to fill host info !!!
  
+https://github.com/CodingWith-Adam/pacman
